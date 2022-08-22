@@ -16,7 +16,6 @@ javadoc=$tmp/RPMS/noarch/${nvr/test/test-javadoc}.noarch.rpm
 rpm -qip $srpm
 rpm -qip $rpm
 rpm -qip $javadoc
-test -d $tmp/BUILD/test-1.0/target/classes
 
 rpm2archive -n $rpm
 tar -C $tmp/pkg -x -v -f $rpm.tar
