@@ -1,6 +1,7 @@
 summary: Build an RPM package with Maven
 test: ./test.sh
 require:
+  - maven-local
   - rpm-build
   - redhat-rpm-config
   - unzip
