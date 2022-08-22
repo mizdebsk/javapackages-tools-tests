@@ -6,7 +6,7 @@ License:        MIT
 URL:            file:///dev/null
 BuildArch:      noarch
 
-Source0:        test-%{version}.tar.gz
+Source0:        test-%{version}.tar
 
 BuildRequires:  maven-local
 

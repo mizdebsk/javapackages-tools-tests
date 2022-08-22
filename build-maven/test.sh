@@ -1,9 +1,11 @@
 #!/bin/sh -eux
 
 tmp=$(mktemp -d)
-mkdir $tmp/pkg $tmp/javadoc $tmp/jar
+mkdir $tmp/SOURCES $tmp/pkg $tmp/javadoc $tmp/jar
 
-rpmbuild -D "_sourcedir $PWD" -D "_topdir $tmp" -ba test.spec
+tar -c -v -f $tmp/SOURCES/test-1.0.tar test-1.0
+
+rpmbuild -D "_topdir $tmp" -ba test.spec
 
 nvr=test-1.0-2.fc35
 srpm=$tmp/SRPMS/$nvr.src.rpm
