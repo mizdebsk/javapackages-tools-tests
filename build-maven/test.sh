@@ -7,7 +7,8 @@ tar -c -v -f $tmp/SOURCES/test-1.0.tar test-1.0
 
 rpmbuild -D "_topdir $tmp" -ba test.spec
 
-nvr=test-1.0-2.fc35
+dist=$(rpm -E '%{?dist}')
+nvr=test-1.0-2$dist
 srpm=$tmp/SRPMS/$nvr.src.rpm
 rpm=$tmp/RPMS/noarch/$nvr.noarch.rpm
 javadoc=$tmp/RPMS/noarch/${nvr/test/test-javadoc}.noarch.rpm
